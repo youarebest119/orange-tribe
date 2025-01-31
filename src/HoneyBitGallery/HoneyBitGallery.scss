@@ -1,0 +1,26 @@
+@use "../assets/theme/_var.scss" as *;
+
+.honey_bit_gallery_design {
+    background-color: #929089;
+    display: flex;
+    align-items: center;
+    min-height: 100dvh;
+    position: relative;
+    overflow: clip;
+    .gallery {
+        display: flex;
+        gap: 4rem;
+        margin-left: -18rem;
+
+        .gallery_img {
+            box-shadow: 1rem 1rem 2rem 0 rgba($black, 0.5);
+        }
+    }
+
+    .person {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50rem;
+    }
+}

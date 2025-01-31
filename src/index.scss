@@ -143,7 +143,17 @@ input:-webkit-autofill:active {
     padding: 0 1.5rem;
 }
 
-h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1.6rem;
+body {
+    &:has(.home_page) {
+        overflow: hidden;
+    }
+}
+
+:root {
+    scroll-behavior: auto !important;
+}
+.home_page {
+    .l {
+        overflow: clip;
+    }
 }

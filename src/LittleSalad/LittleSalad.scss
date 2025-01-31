@@ -1,0 +1,45 @@
+@use "../assets/theme/_var.scss" as *;
+
+.little_salad_design {
+    background-color: #929089;
+    position: relative;
+    z-index: 1;
+    height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: clip;
+
+    h2 {
+        font-size: 12rem;
+        text-align: center;
+    }
+
+    >div {
+        position: absolute;
+
+        img {
+            filter: drop-shadow(1rem 1rem 2rem rgba($black, 0.5));
+        }
+
+        &.topleft {
+            top: 0;
+            left: 0;
+        }
+
+        &.topright {
+            top: 0;
+            right: 0;
+        }
+
+        &.bottomleft {
+            bottom: 0;
+            left: 0;
+        }
+
+        &.bottomright {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}

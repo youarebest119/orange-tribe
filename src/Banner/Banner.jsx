@@ -51,7 +51,7 @@ const Banner = () => {
                 yoyoEase: "ease.inOut",
                 duration: 5,
             }, "<");
-    })
+    }, { scope: ref })
     return (
         <section ref={ref} className="banner_design">
             <Container>
