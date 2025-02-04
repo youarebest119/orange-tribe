@@ -11,49 +11,49 @@ import SplitText from 'gsap-trial/SplitText';
 const OpenFoodProducts = () => {
     const scope = useRef();
     useGSAP(() => {
-        const selector = gsap.utils.selector(scope.current);
-        new SplitText(selector("h3"), { type: "words, lines", linesClass: "l" })
+        // const selector = gsap.utils.selector(scope.current);
+        // new SplitText(selector("h3"), { type: "words, lines", linesClass: "l" })
 
-        gsap.timeline({
-            defaults: {
-                duration: 0.6,
-                ease: "ease.inOut",
-            },
-        })
-            .from(selector("h3"), {
-                opacity: 0,
-            })
-            .from(selector("img"), {
-                opacity: 0,
-            })
-            .from(selector(".product_card:nth-child(2)"), {
-                xPercent: 50,
-                yPercent: 50,
-                duration: 0.5,
-            }, "<")
-            .to(selector(".product_card:nth-child(2)"), {
-                scale: 1.5,
-            }, "<")
-            .to(selector(".product_card:nth-child(2)"), {
-                scale: 1,
-            })
-            .from(selector(".of_in"), {
-                "--shadow-opacity": 0,
-            }, "<")
-            .addLabel("leaf")
-            .from(selector(".of_in"), {
-                "--first-card-position": 0,
-                "--last-card-position": 0,
-                "--card-opactiy": 0,
-            }, "leaf")
-            .from(selector(".left"), {
-                yPercent: 100,
-                xPercent: -100,
-            }, "leaf")
-            .from(selector(".right"), {
-                yPercent: -100,
-                xPercent: 100,
-            }, "leaf")
+        // gsap.timeline({
+        //     defaults: {
+        //         duration: 0.6,
+        //         ease: "ease.inOut",
+        //     },
+        // })
+        //     .from(selector("h3"), {
+        //         opacity: 0,
+        //     })
+        //     .from(selector("img"), {
+        //         opacity: 0,
+        //     })
+        //     .from(selector(".product_card:nth-child(2)"), {
+        //         xPercent: 50,
+        //         yPercent: 50,
+        //         duration: 0.5,
+        //     }, "<")
+        //     .to(selector(".product_card:nth-child(2)"), {
+        //         scale: 1.5,
+        //     }, "<")
+        //     .to(selector(".product_card:nth-child(2)"), {
+        //         scale: 1,
+        //     })
+        //     .from(selector(".of_in"), {
+        //         "--shadow-opacity": 0,
+        //     }, "<")
+        //     .addLabel("leaf2")
+        //     .from(selector(".of_in"), {
+        //         "--first-card-position": 0,
+        //         "--last-card-position": 0,
+        //         "--card-opactiy": 0,
+        //     }, "leaf2")
+        //     .from(selector(".left"), {
+        //         yPercent: 100,
+        //         xPercent: -100,
+        //     }, "leaf2")
+        //     .from(selector(".right"), {
+        //         yPercent: -100,
+        //         xPercent: 100,
+        //     }, "leaf2")
         
     }, { scope })
     return (

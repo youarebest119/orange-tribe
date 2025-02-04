@@ -12,29 +12,29 @@ import gsap from 'gsap'
 
 const OpenGallery = () => {
     const scope = useRef();
-    useGSAP(() => {
-        const selector = gsap.utils.selector(scope.current);
-        gsap
-            .timeline()
-            .from(selector(".design_col"), {
-                yPercent: -10,
-                duration: 2,
-                stagger: 0.2,
-                opacity: 0,
-            })
-            .to(selector(".design_in"), {
-                transform: "none"
-            })
-            .to(selector(".design_row"), {
-                y: "-25vh"
-            }, "<")
-            .to(selector(".gallery_img:not(.main_gallery_img)"), {
-                opacity: 0,
-            })
-            .to(selector(".main_gallery_img"), {
-                scale: 1.4
-            }, "<")
-    }, { scope })
+    // useGSAP(() => {
+    //     const selector = gsap.utils.selector(scope.current);
+    //     gsap
+    //         .timeline()
+    //         .from(selector(".design_col"), {
+    //             yPercent: -10,
+    //             duration: 2,
+    //             stagger: 0.2,
+    //             opacity: 0,
+    //         })
+    //         .to(selector(".design_in"), {
+    //             transform: "none"
+    //         })
+    //         .to(selector(".design_row"), {
+    //             y: "-25vh"
+    //         }, "<")
+    //         .to(selector(".gallery_img:not(.main_gallery_img)"), {
+    //             opacity: 0,
+    //         })
+    //         .to(selector(".main_gallery_img"), {
+    //             scale: 1.4
+    //         }, "<")
+    // }, { scope })
     return (
         <section ref={scope} className='open_gallery_design'>
             <div className="design_in">

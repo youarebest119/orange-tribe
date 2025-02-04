@@ -13,41 +13,41 @@ const OpenFoods = () => {
     const scope = useRef();
     useGSAP(() => {
         const selector = gsap.utils.selector(scope.current);
-        let title = new SplitText(selector("h2"), { type: "words, lines", linesClass: "l" })
-        gsap.timeline({
-            defaults: {
-                duration: 0.8,
-                ease: "ease.inOut",
-            }
-        })
-            .from(title.words, {
-                opacity: 0,
-                yPercent: 100,
-                duration: 0.5,
-            })
-            .addLabel("leaf")
-            .to(selector("h2"), {
-                scale: 1,
-            }, "leaf")
-            .from(selector(".top_left"), {
-                yPercent: -100,
-                xPercent: -100,
-            }, "leaf")
-            .from(selector(".top_center"), {
-                yPercent: -100,
-            }, "leaf")
-            .from(selector(".top_right"), {
-                yPercent: -100,
-                xPercent: 100,
-            }, "leaf")
-            .from(selector(".bottom_left"), {
-                yPercent: 100,
-                xPercent: -100,
-            }, "leaf")
-            .from(selector(".bottom_right"), {
-                yPercent: 100,
-                xPercent: 100,
-            }, "leaf")
+        let title = new SplitText(selector("h2"), { type: "words, lines", wordsClass: "w", linesClass: "l" })
+        // gsap.timeline({
+        //     defaults: {
+        //         duration: 0.8,
+        //         ease: "ease.inOut",
+        //     }
+        // })
+        //     .from(title.words, {
+        //         opacity: 0,
+        //         yPercent: 100,
+        //         duration: 0.5,
+        //     })
+        //     .addLabel("leaf")
+        //     .to(selector("h2"), {
+        //         scale: 1,
+        //     }, "leaf")
+        //     .from(selector(".top_left"), {
+        //         yPercent: -100,
+        //         xPercent: -100,
+        //     }, "leaf")
+        //     .from(selector(".top_center"), {
+        //         yPercent: -100,
+        //     }, "leaf")
+        //     .from(selector(".top_right"), {
+        //         yPercent: -100,
+        //         xPercent: 100,
+        //     }, "leaf")
+        //     .from(selector(".bottom_left"), {
+        //         yPercent: 100,
+        //         xPercent: -100,
+        //     }, "leaf")
+        //     .from(selector(".bottom_right"), {
+        //         yPercent: 100,
+        //         xPercent: 100,
+        //     }, "leaf")
     }, { scope })
     return (
         <section ref={scope} className="open_foods_design">

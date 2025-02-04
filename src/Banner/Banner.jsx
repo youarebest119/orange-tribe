@@ -11,47 +11,47 @@ import CustomWiggle from 'gsap-trial/CustomWiggle'
 
 const Banner = () => {
     const ref = useRef();
-    useGSAP(() => {
-        const selector = gsap.utils.selector(ref.current);
-        gsap.timeline()
-            .from(selector(".bread"), {
-                y: 100,
-                ease: "back.inOut",
-                duration: 1,
-                opacity: 0,
-                scale: 0.8,
-                rotate: 10,
-            })
-            .from(selector(".box"), {
-                scale: 0,
-                ease: "back.inOut",
-                duration: 1,
-                opacity: 0,
-                rotate: 10,
-                stagger: 0.1,
-            }, "<+=0.1")
+    // useGSAP(() => {
+    //     const selector = gsap.utils.selector(ref.current);
+    //     gsap.timeline()
+    //         .from(selector(".bread"), {
+    //             y: 100,
+    //             ease: "back.inOut",
+    //             duration: 1,
+    //             opacity: 0,
+    //             scale: 0.8,
+    //             rotate: 10,
+    //         })
+    //         .from(selector(".box"), {
+    //             scale: 0,
+    //             ease: "back.inOut",
+    //             duration: 1,
+    //             opacity: 0,
+    //             rotate: 10,
+    //             stagger: 0.1,
+    //         }, "<+=0.1")
 
-            .fromTo(selector(".box img"), {
-                rotate: -10,
-                xPercent: -5,
-            }, {
-                yoyo: true,
-                xPercent: 5,
-                rotate: 10,
-                repeat: -1,
-                yoyoEase: "ease.inOut",
-                duration: 3,
-            })
-            .fromTo(selector(".bread img"), {
-                rotate: -2,
-            }, {
-                yoyo: true,
-                rotate: 2,
-                repeat: -1,
-                yoyoEase: "ease.inOut",
-                duration: 5,
-            }, "<");
-    }, { scope: ref })
+    //         .fromTo(selector(".box img"), {
+    //             rotate: -10,
+    //             xPercent: -5,
+    //         }, {
+    //             yoyo: true,
+    //             xPercent: 5,
+    //             rotate: 10,
+    //             repeat: -1,
+    //             yoyoEase: "ease.inOut",
+    //             duration: 3,
+    //         })
+    //         .fromTo(selector(".bread img"), {
+    //             rotate: -2,
+    //         }, {
+    //             yoyo: true,
+    //             rotate: 2,
+    //             repeat: -1,
+    //             yoyoEase: "ease.inOut",
+    //             duration: 5,
+    //         }, "<");
+    // }, { scope: ref })
     return (
         <section ref={ref} className="banner_design">
             <Container>

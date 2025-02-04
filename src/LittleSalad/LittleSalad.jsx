@@ -12,40 +12,40 @@ const LittleSalad = () => {
     const scope = useRef();
     useGSAP(() => {
         const selector = gsap.utils.selector(scope.current);
-        const title = new SplitText(selector("h2"), { linesClass: "l", type: "words, lines" })
-        gsap.timeline()
-            .addLabel("leaf")
-            .from(title.words, {
-                yPercent: 100,
-                opacity: 0,
-                duration: 1,
-                ease: "back.inOut",
-                stagger: 0.1,
-            })
-            .from(selector(".topleft"), {
-                yPercent: -100,
-                xPercent: -100,
-                duration: 1,
-                ease: "back.inOut",
-            }, "leaf")
-            .from(selector(".topright"), {
-                yPercent: -100,
-                xPercent: 100,
-                duration: 1,
-                ease: "back.inOut",
-            }, "leaf")
-            .from(selector(".bottomleft"), {
-                yPercent: 100,
-                xPercent: -100,
-                duration: 1,
-                ease: "back.inOut",
-            }, "leaf")
-            .from(selector(".bottomright"), {
-                yPercent: 100,
-                xPercent: 100,
-                duration: 1,
-                ease: "back.inOut",
-            }, "leaf")
+        const title = new SplitText(selector("h2"), { linesClass: "l",wordsClass: "w", type: "words, lines" })
+        // gsap.timeline()
+        //     .addLabel("leaf3")
+        //     .from(title.words, {
+        //         yPercent: 100,
+        //         opacity: 0,
+        //         duration: 1,
+        //         ease: "back.inOut",
+        //         stagger: 0.1,
+        //     })
+        //     .from(selector(".topleft"), {
+        //         yPercent: -100,
+        //         xPercent: -100,
+        //         duration: 1,
+        //         ease: "back.inOut",
+        //     }, "leaf3")
+        //     .from(selector(".topright"), {
+        //         yPercent: -100,
+        //         xPercent: 100,
+        //         duration: 1,
+        //         ease: "back.inOut",
+        //     }, "leaf3")
+        //     .from(selector(".bottomleft"), {
+        //         yPercent: 100,
+        //         xPercent: -100,
+        //         duration: 1,
+        //         ease: "back.inOut",
+        //     }, "leaf3")
+        //     .from(selector(".bottomright"), {
+        //         yPercent: 100,
+        //         xPercent: 100,
+        //         duration: 1,
+        //         ease: "back.inOut",
+        //     }, "leaf3")
     }, { scope })
     return (
         <section ref={scope} className="little_salad_design">

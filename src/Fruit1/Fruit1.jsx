@@ -21,34 +21,34 @@ import "./Fruit1.scss";
 const Fruit1 = () => {
     const scope = useRef();
     useGSAP(() => {
-        const selector = gsap.utils.selector(scope.current);
+        // const selector = gsap.utils.selector(scope.current);
 
-        gsap.timeline()
-            .from(selector(".main_img"), {
-                scale: 0,
-                opacity: 0,
-                duration: 1,
-                ease: "back.inOut",
-            })
-            .from(selector(".float_img"), {
-                top: "50%",
-                left: "50%",
-                opacity: 0,
-                duration: 1,
-                stagger: 0.01,
-            })
-            .fromTo(selector(".float_img img"), {
-                x: -10,
-            }, {
-                x: 10,
-                repeat: -1,
-                yoyo: true,
-                duration: 5,
-                stagger: {
-                    from: "random",
-                    amount: 0.1,
-                }
-            })
+        // gsap.timeline()
+            // .from(selector(".main_img"), {
+            //     scale: 0,
+            //     opacity: 0,
+            //     duration: 1,
+            //     ease: "back.inOut",
+            // })
+            // .from(selector(".float_img"), {
+            //     top: "50%",
+            //     left: "50%",
+            //     opacity: 0,
+            //     duration: 1,
+            //     stagger: 0.01,
+            // })
+            // .fromTo(selector(".float_img img"), {
+            //     x: -10,
+            // }, {
+            //     x: 10,
+            //     repeat: -1,
+            //     yoyo: true,
+            //     duration: 5,
+            //     stagger: {
+            //         from: "random",
+            //         amount: 0.1,
+            //     }
+            // })
 
     }, { scope })
     return (

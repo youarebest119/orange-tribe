@@ -10,25 +10,25 @@ import "./HoneyBitGallery.scss";
 const HoneyBitGallery = () => {
     const ref = useRef();
     useGSAP(() => {
-        const selector = gsap.utils.selector(ref.current);
-        gsap.timeline({
-            defaults : {
-                duration: 1,
-                ease: "back.inOut(0.1)",
-            }
-        })
-            .from(selector(".person"), {
-                yPercent: 100,
-                opacity: 0,
-            })
-            .from(selector(".gallery_img"), {
-                xPercent: i => (3 - i) * -100,
-                opacity: 0,
-                stagger: {
-                    from: "end",
-                    amount: 0.1,
-                },
-            }, "<")
+        // const selector = gsap.utils.selector(ref.current);
+        // gsap.timeline({
+        //     defaults : {
+        //         duration: 1,
+        //         ease: "back.inOut(0.1)",
+        //     }
+        // })
+        //     .from(selector(".person"), {
+        //         yPercent: 100,
+        //         opacity: 0,
+        //     })
+        //     .from(selector(".gallery_img"), {
+        //         xPercent: i => (3 - i) * -100,
+        //         opacity: 0,
+        //         stagger: {
+        //             from: "end",
+        //             amount: 0.1,
+        //         },
+        //     }, "<")
     }, { scope: ref })
     return (
         <section ref={ref} className='honey_bit_gallery_design'>

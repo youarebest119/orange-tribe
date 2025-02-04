@@ -3,7 +3,22 @@
 .open_gallery_design {
     overflow: clip;
     position: relative;
-    background-color: #745494;
+    --before: 0;
+    background-color: transparent;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #745494;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: var(--before);
+        z-index: -1;
+        pointer-events: none;
+    }
 
     .design_in {
         height: 100dvh;

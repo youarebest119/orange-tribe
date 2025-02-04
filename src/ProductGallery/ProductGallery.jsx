@@ -10,49 +10,51 @@ import product5 from "../assets/images/product-gallery/Pure-Makkhan-Bread-1-350x
 import { Container } from 'react-bootstrap';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-;
+
+export function getValue(key) {
+    const values = {
+        1: 200,
+        2: 100,
+        3: 0,
+        4: -100,
+        5: -200
+    };
+    return values[key] ?? null; // Returns null if the key is not found
+}
+
 
 const ProductGallery = () => {
     const scope = useRef();
-    useGSAP(() => {
-        const selector = gsap.utils.selector(scope.current);
-        function getValue(key) {
-            const values = {
-                1: 200,
-                2: 100,
-                3: 0,
-                4: -100,
-                5: -200
-            };
-            return values[key] ?? null; // Returns null if the key is not found
-        }
-        gsap.timeline({
-            defaults: {
-                duration: 1,
-            }
-        })
-            .from(selector(".gallery_item:nth-child(3)"), {
-                y: 100,
-                opacity: 0,
-                duration: 0.5,
-            })
-            .from(selector(".design_in"), {
-                scale: 0.8,
-            })
-            .from(selector(".gallery_item:not(:nth-child(3))"), {
-                opacity: 0,
-                duration: 0.4,
-            }, "<")
-            .from(selector(".gallery_item"), {
-                xPercent: i => getValue(i + 1),
-            }, "<")
-            .from(selector(".gallery_item:first-child .badge_img"), {
-                y: -100,
-            }, "<")
-            .from(selector(".gallery_item:last-child .badge_img"), {
-                y: 100,
-            }, "<")
-    }, { scope })
+    // useGSAP(() => {
+    //     const selector = gsap.utils.selector(scope.current);
+
+    //     gsap.timeline({
+    //         defaults: {
+    //             duration: 1,
+    //         }
+    //     })
+    //         .from(selector(".gallery_item:nth-child(3)"), {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: 0.5,
+    //         })
+    //         .from(selector(".design_in"), {
+    //             scale: 0.8,
+    //         })
+    //         .from(selector(".gallery_item:not(:nth-child(3))"), {
+    //             opacity: 0,
+    //             duration: 0.4,
+    //         }, "<")
+    //         .from(selector(".gallery_item"), {
+    //             xPercent: i => getValue(i + 1),
+    //         }, "<")
+    //         .from(selector(".gallery_item:first-child .badge_img"), {
+    //             y: -100,
+    //         }, "<")
+    //         .from(selector(".gallery_item:last-child .badge_img"), {
+    //             y: 100,
+    //         }, "<")
+    // }, { scope })
     return (
         <section ref={scope} className="product_gallery_design">
             <Container>

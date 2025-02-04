@@ -6,34 +6,34 @@ import gsap from 'gsap';
 const SugarCrush = () => {
     const scope = useRef();
     useGSAP(() => {
-        const selector = gsap.utils.selector(scope.current);
-        gsap.timeline({
-            defaults: {
-                duration: 1,
-            }
-        })
-            .from(selector(".layer"), {
-                "--scale": 0,
-                ease: "power3.out",
-                stagger: {
-                    amount: 0.4,
-                }
-            })
-            .from(selector("#sugar-crush path"), {
-                ease: "back.inOut",
-                scale: 0,
-                opacity: 0,
-                duration: 1.2,
-                stagger: {
-                    amount: 0.4,
-                }
-            }, ">-=1.3")
-            .from(selector("#scoop-of-happiness path"), {
-                display: "none",
-                stagger: {
-                    amount: 0.6,
-                }
-            }, ">")
+        // const selector = gsap.utils.selector(scope.current);
+        // gsap.timeline({
+        //     defaults: {
+        //         duration: 1,
+        //     }
+        // })
+        //     .from(selector(".layer"), {
+        //         "--scale": 0,
+        //         ease: "power3.out",
+        //         stagger: {
+        //             amount: 0.4,
+        //         }
+        //     })
+        //     .from(selector("#sugar-crush path"), {
+        //         ease: "back.inOut",
+        //         scale: 0,
+        //         opacity: 0,
+        //         duration: 1.2,
+        //         stagger: {
+        //             amount: 0.4,
+        //         }
+        //     }, ">-=1.3")
+        //     .from(selector("#scoop-of-happiness path"), {
+        //         display: "none",
+        //         stagger: {
+        //             amount: 0.6,
+        //         }
+        //     }, ">")
     }, { scope })
     return (
         <section ref={scope} className="sugar_crush_design">
