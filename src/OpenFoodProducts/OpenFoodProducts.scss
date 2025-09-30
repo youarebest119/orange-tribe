@@ -1,0 +1,99 @@
+@use "../assets/theme/_var.scss" as *;
+
+
+.of_products_design {
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    overflow: clip;
+    position: relative;
+    z-index: 1;
+    --before: 0;
+    background-color: transparent;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #064820;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: var(--before);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .left {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .of_in {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        --first-card-position: -50%;
+        --last-card-position: 50%;
+        --card-opactiy: 1;
+        --shadow-opacity: 0.6;
+
+        .product_card {
+            max-width: 60rem;
+            z-index: 1;
+            box-shadow: 1rem 1rem 2rem 1rem rgba($black, var(--shadow-opacity));
+            border-radius: 6rem;
+            position: relative;
+
+            h3 {
+                position: absolute;
+                top: 25%;
+                left: 25%;
+                transform: translate(-50%, -50%);
+                font-size: 6rem;
+                text-align: center;
+                font-weight: 800;
+            }
+
+            &:not(:nth-child(2)) {
+                h3 {
+                    font-size: 3rem;
+                }
+            }
+
+            &:nth-child(2) {
+                transform: scale(2);
+            }
+
+            &:first-child {
+                position: absolute;
+                opacity: var(--card-opactiy);
+                top: 0;
+                left: 0;
+                transform: translate(var(--first-card-position), var(--first-card-position));
+                max-width: 46rem;
+            }
+
+            &:last-child {
+                z-index: -1;
+                bottom: 0;
+                position: absolute;
+                right: 0;
+                max-width: 46rem;
+                opacity: var(--card-opactiy);
+                transform: translate(var(--last-card-position), var(--last-card-position));
+            }
+        }
+    }
+}

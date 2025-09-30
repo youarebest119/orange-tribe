@@ -1,0 +1,50 @@
+@use "../assets/theme/_var.scss" as *;
+
+.open_gallery_design {
+    overflow: clip;
+    position: relative;
+    --before: 0;
+    background-color: transparent;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-color: #745494;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: var(--before);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .design_in {
+        height: 100dvh;
+        display: flex;
+        align-items: flex-start;
+        transform: rotate(-30deg) translateY(-30%);
+
+        .design_row {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            // transform: rotate(-45deg);
+            transform-origin: center;
+            justify-content: space-between;
+
+            .design_col {
+                .gallery_img {
+                    margin-bottom: 8rem;
+
+                    img {
+                        box-shadow: 1rem 1rem 2rem 0rem rgba($black, 0.5);
+                        border-radius: 50%;
+                        height: calc(50vh - 4rem);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+@use "../assets/theme/_var.scss" as *;
+
+.product_gallery_design {
+    min-height: 100dvh;
+    padding: 4rem 0;
+    display: flex;
+    align-items: center;
+
+    .design_in {
+        .gallery {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            >div {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: calc(100% - 4rem);
+                    height: 4rem;
+                    position: absolute;
+                    bottom: -2rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    background-color: black;
+                    border-radius: 5rem;
+                    filter: blur(2rem);
+                    z-index: -1;
+                }
+
+                .product_img {
+                    max-width: unset;
+                }
+
+                .badge_img {
+                    position: absolute;
+                }
+
+                &:nth-child(1) {
+                    .badge_img {
+                        top: 10rem;
+                        left: 0;
+                        transform: translateX(-50%);
+                    }
+
+                    .product_img {
+                        height: 60dvh;
+                    }
+                }
+
+                &:nth-child(2) {
+                    .product_img {
+                        height: 70dvh;
+                    }
+                }
+
+                &:nth-child(3) {
+                    z-index: 2;
+
+                    .product_img {
+                        height: 80dvh;
+                    }
+                }
+
+                &:nth-child(4) {
+                    z-index: 1;
+
+                    .product_img {
+                        height: 70dvh;
+                    }
+                }
+
+                &:nth-child(5) {
+                    .badge_img {
+                        bottom: 0;
+                        right: 0;
+                        transform: translateX(50%);
+                    }
+
+                    .product_img {
+                        height: 60dvh;
+                    }
+                }
+            }
+        }
+    }
+}

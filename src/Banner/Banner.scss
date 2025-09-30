@@ -1,0 +1,45 @@
+@use "../assets/theme/_var.scss" as *;
+
+.banner_design {
+    display: flex;
+    align-items: center;
+    height: 100dvh;
+    padding: 4rem 0;
+
+    .banner_in {
+        .banner_box {
+            width: fit-content;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+
+            .box {
+                position: absolute;
+                z-index: -1;
+                
+                &.box_1 {
+                    transform-origin: top center;
+                    top: -6rem;
+                    left: -12rem;
+                }
+
+                &.box_2 {
+                    right: -14rem;
+                    transform-origin: bottom center;
+                        top: -9rem;
+                }
+
+                &.box_3 {
+                    right: -12rem;
+                    bottom: -8rem;
+                }
+            }
+
+            .bread {
+                img {
+                    filter: drop-shadow(1rem 1rem 1rem rgba(black, 0.4));
+                }
+            }
+        }
+    }
+}

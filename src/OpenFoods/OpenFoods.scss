@@ -1,0 +1,50 @@
+@use "../assets/theme/_var.scss" as *;
+
+.open_foods_design {
+    overflow: clip;
+
+    .open_foods_in {
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .leaf {
+            position: absolute;
+
+            &.top_left {
+                top: 0;
+                left: 0;
+            }
+
+            &.top_center {
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &.top_right {
+                top: 0;
+                right: 0;
+            }
+
+            &.bottom_left {
+                bottom: 0;
+                left: 0;
+            }
+
+            &.bottom_right {
+                bottom: 0;
+                right: 0;
+            }
+        }
+
+        h2 {
+            font-size: 12rem;
+            font-weight: 800;
+            transform: scale(0.8);
+        }
+    }
+}
